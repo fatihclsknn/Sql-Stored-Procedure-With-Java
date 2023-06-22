@@ -1,0 +1,29 @@
+package com.example.sqlstoredprocedure.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
+
+import com.example.sqlstoredprocedure.entity.Contract;
+import com.example.sqlstoredprocedure.repository.ContractRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class ContractService {
+	@Autowired
+	private ContractRepository contractRepository;
+	@Transactional
+	public void createContract(Long customerId, 
+    		 String contractName)
+	{
+		contractRepository.createContract(customerId, contractName);
+	}
+	@Transactional
+	public List<Contract> getAllContract()
+	{
+		return contractRepository.getAllContract();
+	}
+}

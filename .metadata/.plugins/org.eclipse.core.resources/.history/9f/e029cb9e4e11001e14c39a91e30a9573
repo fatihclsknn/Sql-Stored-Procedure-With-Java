@@ -1,0 +1,30 @@
+package com.example.sqlstoredprocedure.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.sqlstoredprocedure.entity.Contract;
+import com.example.sqlstoredprocedure.service.AccountService;
+import com.example.sqlstoredprocedure.service.ContractService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@RestController
+@Tag(name = "Contracts")
+public class ContractController {
+	@Autowired
+	private ContractService contractService;
+
+	
+	@PostMapping("/contracts")
+	public ResponseEntity<Void> createContract(@RequestBody Contract contract)
+	{
+		contractService.createContract(contract.getCustomer().getCustomerID(), contract.getContractName());
+	        return new ResponseEntity<>(HttpStatus.CREATED);
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.example.sqlstoredprocedure.entity;
+
+public class Address {
+
+}

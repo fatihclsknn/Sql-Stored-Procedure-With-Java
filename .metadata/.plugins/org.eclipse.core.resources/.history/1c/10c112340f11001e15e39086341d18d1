@@ -1,0 +1,30 @@
+package com.example.sqlstoredprocedure.repository;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.sqlstoredprocedure.entity.Customer;
+
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer,Long> {
+	  @Procedure(name = "Customer.getAll")
+	    List<Customer> getAllCustomers();
+	  @Procedure(name = "Customer.delete")
+	    void deleteCustomer(@Param("p_customerID") Long customerID);
+	    @Procedure(name = "Customer.get")
+	    Customer getCustomer(@Param("p_customerID") Integer customerID);
+	    @Procedure(name = "Customer.update")
+	     Customer updateCustomer(Long id, @RequestBody Customer customer) ;
+	    @Procedure(name = "Customer.add")
+	    Customer addCustomer(
+	            @Param("p_customerName") String customerName,
+	            @Param("p_customerSurname") String customerSurname,
+	            @Param("p_status") String customerStatus
+	    );
+	    
+	    
+}

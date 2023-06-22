@@ -1,0 +1,69 @@
+package com.example.sqlstoredprocedure.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.sqlstoredprocedure.entity.Account;
+import com.example.sqlstoredprocedure.entity.Customer;
+import com.example.sqlstoredprocedure.service.AccountService;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@RestController
+@Tag(name = "Accounts")
+public class AccountController {
+
+	@Autowired
+	private AccountService accountService;
+
+	@GetMapping("/accounts")
+	@Operation(summary = "list the accounts")
+	public ResponseEntity<List<Account>> getAllAccounts() {
+		List<Account> accounts = accountService.getAllAccounts();
+		return ResponseEntity.ok(accounts);
+	}
+	 @DeleteMapping("accounts/{id}")
+		@Operation(summary = "delete a account")
+
+	    public ResponseEntity<String> deleteAccount(@PathVariable("id") Long id) {
+		 accountService.deleteAccount(id);
+	        return ResponseEntity.ok("Account deleted successfully");
+	    }
+	  @GetMapping("accounts/{id}")
+		@Operation(summary = "get a customer")
+
+	    public ResponseEntity<Account> getAccount(@PathVariable("id") Long id) {
+	        Account account = accountService.getAccount(id);
+	        if (account != null) {
+	            return ResponseEntity.ok(account);
+	        } else {
+	            return ResponseEntity.notFound().build();
+	        }
+	    }
+	  
+	  @PutMapping("accounts/{id}")
+		@Operation(summary = "update a account")
+	    public ResponseEntity<String> updateCustomer(
+	            @PathVariable("id") Long id,
+	            @RequestBody Account account) {
+	        
+	        Account updatedAccount = accountService.updateAccount(id, account);
+	        
+	        if (updatedAccount != null) {
+	            return ResponseEntity.ok("Account with ID " + id + " updated successfully.");
+	        } else {
+	            return ResponseEntity.notFound().build();
+	        }
+	    }
+	
+
+}

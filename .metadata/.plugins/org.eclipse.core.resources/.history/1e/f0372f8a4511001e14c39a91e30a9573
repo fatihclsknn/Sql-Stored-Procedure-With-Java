@@ -1,0 +1,25 @@
+package com.example.sqlstoredprocedure.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.sqlstoredprocedure.entity.Branch;
+import com.example.sqlstoredprocedure.service.BranchService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@RestController
+@Tag(name ="Branches")
+public class BranchController {
+	@Autowired
+	private BranchService branchService;
+	@PostMapping("/branches")
+	public ResponseEntity<Branch> addBranch(@RequestBody Branch branch)
+	{
+		Branch newBranch = branchService.addBranch(branch.getBranchName(), branch.getBranchLocation(),branch.getStatus());
+	}
+
+}
