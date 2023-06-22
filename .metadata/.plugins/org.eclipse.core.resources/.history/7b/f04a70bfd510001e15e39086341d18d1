@@ -1,0 +1,13 @@
+ spring.datasource.url=jdbc:mysql://localhost/procedure
+ spring.datasource.username=root
+ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+ spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+
+
+# Veritaban\u0131 sürücüsü
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+# Hibernate ayarlar\u0131
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update
+

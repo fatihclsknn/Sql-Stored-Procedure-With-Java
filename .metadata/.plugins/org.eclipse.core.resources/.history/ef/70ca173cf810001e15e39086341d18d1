@@ -1,0 +1,5 @@
+package com.example.sqlstoredprocedure.repository;
+
+public interface AccountRepository {
+
+}

@@ -1,0 +1,26 @@
+package com.example.sqlstoredprocedure.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.sqlstoredprocedure.entity.Address;
+@Repository
+public interface AdressRepository  extends JpaRepository<Address, Long>{
+	  @Procedure(name = "GetAddressById")
+	    Address getAddress(@Param("p_addressId") Long adressID);
+	  @Procedure(name = "Address.getAll")
+	    List<Address> getAllAddress();
+	  @Procedure(name = "Address.delete")
+	    void deleteAddress(@Param("p_addressId") Long customerID);
+	  @Procedure(name = "CreateAddress")
+	    void createAddres(@Param("p_customerId") Long customerId, 
+	    		@Param("p_countryName") String countryName,
+	    		@Param("p_cityName") String cityName
+	    		);
+	   @Procedure(name = "Customer.address")
+	   List<Address> getCustomerAddress(@Param("p_customerID") Long customerID);
+}

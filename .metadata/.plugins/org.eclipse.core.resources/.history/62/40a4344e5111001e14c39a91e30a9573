@@ -1,0 +1,66 @@
+package com.example.sqlstoredprocedure.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.sqlstoredprocedure.entity.Address;
+import com.example.sqlstoredprocedure.entity.Customer;
+import com.example.sqlstoredprocedure.repository.CustomerRepository;
+
+
+import jakarta.transaction.Transactional;
+
+import java.util.List;
+
+@Service
+public class CustomerService {
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+
+	@Transactional()
+	 public List<Customer> getAllCustomers() {
+	        return customerRepository.getAllCustomers();
+	    }
+	 
+
+	 @Transactional
+	  public void deleteCustomer(Long id) {
+	        customerRepository.deleteCustomer(id);
+	    }
+	 @Transactional
+	  public Customer getCustomer(Long id) {
+	       return customerRepository.getCustomer(id);
+	    }
+	 @Transactional
+	 public Customer updateCustomer(Long id, @RequestBody Customer customer ) {
+	     Customer updateCustomer = customerRepository.getCustomer(id);
+	     
+	     if (updateCustomer != null) {
+	    	 updateCustomer.setCustomerName(customer.getCustomerName());
+	    	 updateCustomer.setCustomerSurname(customer.getCustomerSurname());
+	    	 updateCustomer.setStatus(customer.getStatus());
+	         return updateCustomer;
+	     } else {
+	         return null;
+	     }
+	 }
+	 @Transactional
+	   public Customer addCustomer(String customerName, String customerSurname, String customerStatus) {
+		 Customer customer = new Customer();
+		    customer.setCustomerName(customerName);
+		    customer.setCustomerSurname(customerSurname);
+		    customer.setStatus(customerStatus);
+
+		    return customerRepository.addCustomer(customerName, customerSurname, customerStatus);
+	    }
+	 @Transactional
+	   public List< Address> getCustomerAddress(Long customerID){
+		   return customerRepository.getCustomerAddress(customerID);
+	   }
+
+
+
+}

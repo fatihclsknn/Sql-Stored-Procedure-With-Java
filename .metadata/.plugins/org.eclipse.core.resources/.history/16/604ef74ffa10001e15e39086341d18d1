@@ -1,0 +1,23 @@
+package com.example.sqlstoredprocedure.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.sqlstoredprocedure.entity.Account;
+import com.example.sqlstoredprocedure.repository.AccountRepository;
+
+import jakarta.transaction.Transactional;
+@Service
+public class AccountService {
+	@Autowired
+	private AccountRepository accountRepository;
+	 
+	 @Transactional
+	 public List<Account> getAllAccounts() {
+	        return accountRepository.getAllAccount();
+	    }
+	 
+
+}

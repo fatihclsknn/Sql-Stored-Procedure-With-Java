@@ -1,0 +1,15 @@
+package com.example.sqlstoredprocedure.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.sqlstoredprocedure.repository.AdressRepository;
+import com.example.sqlstoredprocedure.repository.CustomerRepository;
+
+@Service
+public class AdressService {
+	@Autowired
+	private AdressRepository addressRepository;
+	
+
+}

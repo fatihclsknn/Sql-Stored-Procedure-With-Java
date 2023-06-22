@@ -1,0 +1,22 @@
+package com.example.sqlstoredprocedure.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.query.Procedure;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.sqlstoredprocedure.entity.Branch;
+@Repository
+public interface BranchRepository extends JpaRepository<Branch, Long> {
+	 @Procedure(name = "Branch.create")
+	    Branch addBranch(@Param("p_branch_name") String branchName, @Param("p_branch_location") String branchLocation, @Param("p_status") char status);
+
+	 @Procedure(name = "Branch.getAll")
+	 List<Branch> getAllBranch();
+	 
+	 @Procedure(name = "Branch.get")
+	 Branch getBranch(@Param("p_branch_id") Long branchId);
+ 	 
+}

@@ -1,0 +1,27 @@
+package com.example.sqlstoredprocedure.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.sqlstoredprocedure.service.CustomerService;
+import java.util.List;
+import com.example.sqlstoredprocedure.entity.Customer;
+
+@RestController
+public class CustomerController {
+	@Autowired
+	private CustomerService customerService;
+	
+	@GetMapping("/sdds")
+	public String ddsd()
+	{
+		return "dfsfsdf";
+	}
+	@GetMapping("/customers")
+	public List<Customer>  getAllCustomers()
+	{
+		return null;
+	}
+	
+}

@@ -1,0 +1,37 @@
+package com.example.sqlstoredprocedure.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.sqlstoredprocedure.service.CustomerService;
+
+import java.math.BigInteger;
+import java.util.List;
+import com.example.sqlstoredprocedure.entity.Customer;
+
+@RestController
+public class CustomerController {
+	@Autowired
+	private CustomerService customerService;
+	
+	@GetMapping("/customers/{id}")
+	public  List<Customer> getCustomer(@PathVariable BigInteger id)
+	{
+		return customerService.getCustomer(id);
+	}
+	@GetMapping("/customers")
+	public List<Customer>  getAllCustomers()
+	{
+		return customerService.getTotalCustomers();
+	}
+	
+	@DeleteMapping("/customers/{id}")
+	public String getAllCustomers(@PathVariable BigInteger id)
+	{
+		return customerService.deleteCustomer(id)
+	}
+	
+}

@@ -1,0 +1,44 @@
+package com.example.sqlstoredprocedure.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
+
+import com.example.sqlstoredprocedure.entity.Branch;
+import com.example.sqlstoredprocedure.entity.Customer;
+import com.example.sqlstoredprocedure.repository.BranchRepository;
+import com.example.sqlstoredprocedure.repository.CustomerRepository;
+
+import jakarta.transaction.Transactional;
+@Service
+public class BranchService {
+	@Autowired
+	private BranchRepository branchRepository;
+	@Transactional
+	public Branch addBranch(
+			String branchName, String branchLocation, char status)
+	{
+		Branch branch = new Branch();
+		branch.setBranchName(branchName);
+		branch.setBranchLocation(branchLocation);
+		branch.setStatus(status);
+		return branchRepository.addBranch(branchName, branchLocation, status);
+	}
+	@Transactional
+	public List<Branch> getAllBranch()
+	{
+		return branchRepository.getAllBranch();
+	}
+	@Transactional
+	public Branch getBranch(Long branchId)
+	{
+		return branchRepository.getBranch(branchId);
+	}
+	@Transactional
+	public void deleteBranch(Long branchId)
+	{
+		 branchRepository.deleteBranch(branchId);
+	}
+}

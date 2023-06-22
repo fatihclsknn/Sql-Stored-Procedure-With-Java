@@ -1,0 +1,61 @@
+package com.example.sqlstoredprocedure.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.sqlstoredprocedure.entity.Address;
+import com.example.sqlstoredprocedure.repository.AdressRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class AdressService {
+	@Autowired
+	private AdressRepository addressRepository;
+	
+
+	 @Transactional
+	  public Address getAddress(Long id) {
+	       return addressRepository.getAddress(id);
+	    }
+	 @Transactional
+	  public List<Address> getAllAddress() {
+	       return addressRepository.getAllAddress();
+	    }
+
+
+	 @Transactional
+	  public void deleteAdress(Long id) {
+		 addressRepository.deleteAddress(id);
+	    }
+	 
+	 @Transactional
+	  public void createAddres(Long customerId, String countryName, String cityName) {
+		 addressRepository.createAddres(customerId, countryName, cityName);
+	    }
+	 @Transactional
+	 public Address updateAddres(Long id, @RequestBody Address address )
+	 {
+		 Address updateAddres = addressRepository.getAddress(id);
+		 if (updateAddres != null)
+		 {
+			 updateAddres.setCityName(address.getCityName());
+			 updateAddres.setCountryName(address.getCountryName());
+			 updateAddres.setCustomer(address.getCustomer());
+			 return updateAddres;
+		 }
+		 else
+		 {
+			 return null;
+		 }
+	 }
+	
+	 
+	 
+}
+
+
+

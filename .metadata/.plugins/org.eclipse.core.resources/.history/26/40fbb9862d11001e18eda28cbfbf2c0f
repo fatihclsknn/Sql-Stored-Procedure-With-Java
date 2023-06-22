@@ -1,0 +1,44 @@
+package com.example.sqlstoredprocedure.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.sqlstoredprocedure.entity.Account;
+import com.example.sqlstoredprocedure.entity.Customer;
+import com.example.sqlstoredprocedure.repository.AccountRepository;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.transaction.Transactional;
+@Service
+public class AccountService {
+	@Autowired
+	private AccountRepository accountRepository;
+
+	@Transactional 
+	 public List<Account> getAllAccounts() {
+
+	        return accountRepository.getAllAccounts();
+	    }
+	
+	 @Transactional
+	  public void deleteAccount(Long id) {
+		 accountRepository.deleteAccount(id);
+	    }
+	 @Transactional
+	  public Account getAccount(Long id) {
+	       return accountRepository.getAccount(id);
+	    }
+	
+	 @Transactional
+	 public void updateAccount(Long accountId, Long customerId, char status) {
+		    accountRepository.updateAccount(accountId, customerId, status);
+		}
+	 
+	 
+	 
+	 
+}
