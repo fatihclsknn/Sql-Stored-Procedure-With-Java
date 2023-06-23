@@ -26,10 +26,11 @@ public class CustomerService {
 	    }
 	 
 
-	 @Transactional
+	/* @Transactional
 	  public void deleteCustomer(Long id) {
 	        customerRepository.deleteCustomer(id);
 	    }
+	    */
 	 @Transactional
 	  public Customer getCustomer(Long id) {
 	       return customerRepository.getCustomer(id);
@@ -64,7 +65,15 @@ public class CustomerService {
 	   public List< Contract> getCustomerContract(Long customerID){
 		   return customerRepository.getCustomeContract(customerID);
 	   }
-
+	 @Transactional
+	 public boolean updateCustomerStatus(Long customerId) {
+	        try {
+	            customerRepository.updateCustomerStatus(customerId);
+	            return true;
+	        } catch (Exception e) {
+	            return false;
+	        }
+	    }
 
 
 }

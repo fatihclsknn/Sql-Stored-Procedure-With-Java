@@ -45,13 +45,14 @@ public class AccountController {
 	
 	
 	
-	 @DeleteMapping("accounts/{id}")
+	/* @DeleteMapping("accounts/{id}")
 		@Operation(summary = "delete a account")
 
 	    public ResponseEntity<String> deleteAccount(@PathVariable("id") Long id) {
 		 accountService.deleteAccount(id);
 	        return ResponseEntity.ok("Account deleted successfully");
 	    }
+	    */
 	  @GetMapping("accounts/{id}")
 		@Operation(summary = "get a customer")
 
@@ -76,6 +77,17 @@ public class AccountController {
 	        {
 	            return ResponseEntity.notFound().build();
 
+	        }
+	    }
+	   
+	   @DeleteMapping("/accounts/{id}")
+		@Operation(summary = "delete a account")
+	    public ResponseEntity<String> deleteAccount(@PathVariable Long id) {
+	        boolean updateSuccess = accountService.updateAccountStatus(id);
+	        if (updateSuccess) {
+	            return ResponseEntity.ok("Account deleted successfully.");
+	        } else {
+	            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete account.");
 	        }
 	    }
 	

@@ -22,10 +22,11 @@ public class AccountService {
 	        return accountRepository.getAllAccounts();
 	    }
 	
-	 @Transactional
+	/* @Transactional
 	  public void deleteAccount(Long id) {
 		 accountRepository.deleteAccount(id);
 	    }
+	    */
 	 @Transactional
 	  public Account getAccount(Long id) {
 	       return accountRepository.getAccount(id);
@@ -47,7 +48,15 @@ public class AccountService {
 	  public void createAccount(Long customerId, char status) {
 	        accountRepository.createAccount(customerId, status);
 	    }
-	 
+	 public boolean updateAccountStatus(Long accountId) {
+	        try {
+	            accountRepository.updateAccountStatus(accountId);
+	            return true;
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return false;
+	        }
+	    }
 	 
 	 
 }

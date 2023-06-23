@@ -3,6 +3,7 @@ package com.example.sqlstoredprocedure.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,13 +44,14 @@ public class BranchController {
 		return ResponseEntity.ok().body(branchService.getBranch(id));
 	}
 	
-	@DeleteMapping("/branches/{id}")
+	/*@DeleteMapping("/branches/{id}")
 	@Operation(summary = "delete a branch")
 	public ResponseEntity<String> deleteBranch(@PathVariable Long id)
 	{
 		branchService.deleteBranch(id);
 		return ResponseEntity.ok("Branch deleted successfully");
 	}
+	*/
 	@PutMapping("/branches/{id}")
 	@Operation(summary = "update a branch")
 	public ResponseEntity<Branch> updateBranch(@PathVariable Long id, @RequestBody Branch branch)
@@ -64,5 +66,17 @@ public class BranchController {
 			return null;
 		}
 	}
+	
+	
+	@DeleteMapping("/branches/{id}")
+	@Operation(summary = "delete a branch")
+    public ResponseEntity<String> deleteBranch(@PathVariable Long id) {
+        boolean updateSuccess = branchService.updateBranchStatus(id);
+        if (updateSuccess) {
+            return ResponseEntity.ok("Branch  deleted successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete branch.");
+        }
+    }
 
 }

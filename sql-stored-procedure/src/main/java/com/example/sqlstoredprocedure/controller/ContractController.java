@@ -47,13 +47,13 @@ public class ContractController {
 		return ResponseEntity.ok().body(contractService.getContract(id));
 	}
 	
-	@DeleteMapping("contracts/{id}")
+	/*@DeleteMapping("contracts/{id}")
 	@Operation(summary = "delete a contracts")
 
     public ResponseEntity<String> deleteContract(@PathVariable("id") Long id) {
 	 	contractService.deleteContract(id);
         return ResponseEntity.ok("Contract deleted successfully");
-    }
+    }*/
 	
 	
 	@PutMapping("contracts/{id}")
@@ -72,6 +72,17 @@ public class ContractController {
 
 		     }
 	}
+	
+	
+    @DeleteMapping("contracts/{id}")
+    public ResponseEntity<String> deleteContract(@PathVariable Long id) {
+        boolean updateSuccess = contractService.updateContractStatus(id);
+        if (updateSuccess) {
+            return ResponseEntity.ok("Contract  deleted successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete contract .");
+        }
+    }
 	
 	
 }

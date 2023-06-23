@@ -34,12 +34,12 @@ public class BranchService {
 	{
 		return branchRepository.getBranch(branchId);
 	}
-	@Transactional
+	/*@Transactional
 	public void deleteBranch(Long branchId)
 	{
 		 branchRepository.deleteBranch(branchId);
 	}
-	
+	*/
 	
 	 @Transactional
 	 public Branch updateBranch(Long id, @RequestBody Branch branch ) {
@@ -56,6 +56,15 @@ public class BranchService {
 	     }
 	 }
 	
+	 public boolean updateBranchStatus(Long branchId) {
+	        try {
+	            branchRepository.updateBranchStatus(branchId);
+	            return true;
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return false;
+	        }
+	    }
 	
 	
 	

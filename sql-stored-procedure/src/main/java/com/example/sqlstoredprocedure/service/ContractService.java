@@ -51,4 +51,15 @@ public class ContractService {
 			 return null;
 		 }
 	 }
+	 
+	 
+	 @Transactional
+	 public boolean updateContractStatus(Long contractId) {
+	        try {
+	        	contractRepository.updateContractStatus(contractId);
+	            return true;
+	        } catch (Exception e) {
+	            return false;
+	        }
+	    }
 }

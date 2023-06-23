@@ -2,6 +2,8 @@ package com.example.sqlstoredprocedure.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -11,12 +13,14 @@ import com.example.sqlstoredprocedure.entity.Address;
 import com.example.sqlstoredprocedure.entity.Contract;
 import com.example.sqlstoredprocedure.entity.Customer;
 
+import jakarta.transaction.Transactional;
+
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
 	  @Procedure(name = "Customer.getAll")
 	    List<Customer> getAllCustomers();
-	  @Procedure(name = "Customer.delete")
-	    void deleteCustomer(@Param("p_customerID") Long customerID);
+	  //@Procedure(name = "Customer.delete")
+	    //void deleteCustomer(@Param("p_customerID") Long customerID);
 	    @Procedure(name = "Customer.get")
 	    Customer getCustomer(@Param("p_customerID") Long customerID);
 	    @Procedure(name = "Customer.update")
@@ -31,4 +35,9 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 		   List<Address> getCustomerAddress(@Param("p_customerID") Long customerID);
 		   @Procedure(name = "Customer.contract")
 		   List<Contract> getCustomeContract(@Param("p_customerID") Long customerID);
+		   
+		    @Modifying
+		    @Transactional
+		    @Query(value = "CALL update_customer_status(:customerId)", nativeQuery = true)
+		    void updateCustomerStatus(Long customerId);
 }
