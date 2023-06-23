@@ -30,7 +30,6 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 	  Account updateAccount(Long id, @RequestBody Account account);
 	  @Procedure(name = "createAccount")
 	    void createAccount(@Param("p_customerId") Long customerId, @Param("p_status") char status);
-	 
 	  @Modifying
 	    @Transactional
 	    @Query(value = "CALL update_account_status(:accountId)", nativeQuery = true)

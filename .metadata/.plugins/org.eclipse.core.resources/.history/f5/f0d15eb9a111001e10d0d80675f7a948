@@ -62,7 +62,6 @@ public class AddressController {
 		addressService.deleteAdress(id);
 		return ResponseEntity.ok("Address deleted successfully");
 	}
-	
 	@PutMapping("address/{id}")
 	@Operation(summary = "update a address")
 

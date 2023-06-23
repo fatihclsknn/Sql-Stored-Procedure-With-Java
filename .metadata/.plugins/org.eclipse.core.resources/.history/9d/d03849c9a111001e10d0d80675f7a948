@@ -80,7 +80,6 @@ public class AccountController {
 	        }
 	    }
 	   
-	   
 	   @DeleteMapping("/accounts/{id}")
 		@Operation(summary = "delete a account")
 	    public ResponseEntity<String> deleteAccount(@PathVariable Long id) {

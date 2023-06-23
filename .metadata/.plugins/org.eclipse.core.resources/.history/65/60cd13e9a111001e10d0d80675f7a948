@@ -36,7 +36,6 @@ public class AdressService {
 	  public void createAddres(Long customerId, String countryName, String cityName) {
 		 addressRepository.createAddres(customerId, countryName, cityName);
 	    }
-	
 	 @Transactional
 	 public Address updateAddres(Long id, @RequestBody Address address )
 	 {

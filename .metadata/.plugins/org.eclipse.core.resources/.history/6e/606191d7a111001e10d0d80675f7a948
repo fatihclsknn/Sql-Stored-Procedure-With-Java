@@ -30,7 +30,6 @@ public interface BranchRepository extends JpaRepository<Branch, Long> {
 	 @Procedure(name = "Branch.update")
 	  Branch updateAddres(Long id, @RequestBody Branch branch);
 	 
-	 
 	    @Modifying
 	    @Transactional
 	    @Query(value = "CALL update_branch_status(:branchId)", nativeQuery = true)

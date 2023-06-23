@@ -91,7 +91,6 @@ public class CustomerController {
 	        }
 	    }
 	    
-	    
 	    @DeleteMapping("customers/{id}")
 		@Operation(summary = "delete a customer")
 	    public ResponseEntity<String> deleteCustomerStatus(@PathVariable Long id) {

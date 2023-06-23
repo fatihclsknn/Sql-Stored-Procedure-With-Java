@@ -28,7 +28,6 @@ public interface ContractRepository extends JpaRepository<Contract, Long>{
 	 
 	  @Procedure(name = "contractUpdate")
 	  Contract updateContract(Long id, @RequestBody Contract contract);
-	 
 	  @Modifying
 	    @Transactional
 	    @Query(value = "CALL update_contract_status(:contractId)", nativeQuery = true)

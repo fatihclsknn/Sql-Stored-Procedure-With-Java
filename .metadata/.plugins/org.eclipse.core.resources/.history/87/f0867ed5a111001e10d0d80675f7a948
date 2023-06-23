@@ -22,7 +22,6 @@ public interface AdressRepository  extends JpaRepository<Address, Long>{
 	    		@Param("p_countryName") String countryName,
 	    		@Param("p_cityName") String cityName
 	    		);
-	  
 	  @Procedure(name = "update_address")
 	  Address updateAddres(Long id, @RequestBody Address address);
 

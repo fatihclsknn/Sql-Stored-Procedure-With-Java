@@ -74,7 +74,6 @@ public class ContractController {
 	}
 	
 	
-	
     @DeleteMapping("contracts/{id}")
     public ResponseEntity<String> deleteContract(@PathVariable Long id) {
         boolean updateSuccess = contractService.updateContractStatus(id);

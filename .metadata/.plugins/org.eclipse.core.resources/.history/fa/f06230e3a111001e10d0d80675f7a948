@@ -35,7 +35,6 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 		   List<Address> getCustomerAddress(@Param("p_customerID") Long customerID);
 		   @Procedure(name = "Customer.contract")
 		   List<Contract> getCustomeContract(@Param("p_customerID") Long customerID);
-		 
 		   
 		    @Modifying
 		    @Transactional

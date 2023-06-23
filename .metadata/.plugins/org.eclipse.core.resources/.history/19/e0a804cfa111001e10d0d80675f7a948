@@ -44,12 +44,10 @@ public class AccountService {
 		    else
 		    	return null;
 		}
-	 
 	 @Transactional
 	  public void createAccount(Long customerId, char status) {
 	        accountRepository.createAccount(customerId, status);
 	    }
-
 	 public boolean updateAccountStatus(Long accountId) {
 	        try {
 	            accountRepository.updateAccountStatus(accountId);

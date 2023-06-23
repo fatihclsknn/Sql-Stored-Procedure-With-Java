@@ -68,7 +68,6 @@ public class BranchController {
 	}
 	
 	
-	
 	@DeleteMapping("/branches/{id}")
 	@Operation(summary = "delete a branch")
     public ResponseEntity<String> deleteBranch(@PathVariable Long id) {
