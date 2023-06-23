@@ -91,15 +91,8 @@ public class Address {
     public Address() {
         this.createdDate = LocalDateTime.now();
     }
-    
-    
-    
     @PreUpdate
-    
     protected void onUpdate() {
         this.modifiedDate = LocalDateTime.now();
     }
-    
-    
-    
 }

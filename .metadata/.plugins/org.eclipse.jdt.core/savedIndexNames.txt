@@ -22,7 +22,6 @@ INDEX VERSION 1.131+/Users/fatihcaliskan/Desktop/stored-procedur/.metadata/.plug
 880424751.index
 3525782612.index
 2707599354.index
-2025122836.index
 2506557970.index
 2053249608.index
 1309274499.index
