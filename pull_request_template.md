@@ -1,54 +1,75 @@
 ## Motivation & Context
 <!-- 
-Describe why this PR is opened. If related to an issue, link it here using markdown format:
-Related to: #[issue_number]
-Provide details about what prompted this PR, such as the problem being addressed or the feature being implemented.
+**Motivasyon ve Bağlam:**
+
+Bu PR neden açıldı? Lütfen aşağıda detaylandırın.
+
+- [ ] Bu PR, bir issue ile ilişkilendirilmiştir. (#issue_numarası)
+- [ ] Bu PR, mevcut bir sorunu çözmektedir.
+- [ ] Bu PR, yeni bir özellik eklemektedir.
+- [ ] Diğer: (lütfen belirtiniz)
+
+Açıklama:
+(Yazınız buraya)
 -->
 
 ## Types of Changes
 <!-- 
-Specify what types of changes are included in this PR by checking the relevant boxes:
-- [ ] Bugfix
-- [ ] Feature
-- [ ] Enhancement
-- [ ] Refactor
-- [ ] Documentation
-- [ ] Other: (specify)
-If this is a Breaking Change or includes significant changes, please mention so reviewers can prioritize accordingly.
+**Değişiklik Türleri:**
+
+Bu PR'da hangi türde değişiklikler bulunmaktadır? Aşağıdan seçiniz veya uygun bir türü belirtiniz.
+
+- [ ] Bugfix (Hata düzeltmesi)
+- [ ] Feature (Yeni özellik)
+- [ ] Enhancement (Geliştirme)
+- [ ] Refactor (Kod iyileştirmesi)
+- [ ] Documentation (Dökümantasyon)
+- [ ] Other: (lütfen belirtiniz)
+
+Bu PR, Breaking Change içermekte midir? (Evet/Hayır)
 -->
 
 ## Description
 <!-- 
-Provide a detailed description of the changes made:
-- Explain how the solution was implemented.
-- Describe the modified parts of the code.
-- List any new functionality or behavior introduced.
+**Açıklama:**
+
+Bu PR kapsamında yapılan değişiklikler hakkında detaylı bir açıklama yapınız. Nasıl çözüldü, ne yapıldı, hangi dosyalar değiştirildi?
+
+(Açıklamanız buraya)
 -->
 
 ## How has this been tested?
 <!-- 
-Describe how the changes were tested:
-- Outline the testing process and methodologies.
-- Provide specific test cases or scenarios used.
-- If not tested, explain why (e.g., non-functional changes).
+**Nasıl test edildi?**
+
+Bu PR'ın yapılan değişiklikler doğrultusunda nasıl test edildiğini açıklayınız. Kullanılan test senaryolarını veya test edilen ortamı belirtiniz.
+
+(Test süreci ve sonuçları buraya)
 -->
 
 ## Screenshots
 <!-- 
-Include screenshots if applicable:
-- Visual changes or output before/after (if UI-related).
-- Command-line outputs or database changes (if applicable).
+**Ekran Görüntüleri:**
+
+Varsa, bu PR ile ilgili ekran görüntüleri ekleyiniz. Görsel değişiklikleri göstermek önemlidir.
+
+(Ekran görüntüleri buraya)
 -->
 
 ## Dependencies
 <!-- 
-List any dependencies this PR relies on:
-- Prior PRs that need to be merged first.
-- Post-merge tasks or server-side configurations needed.
+**Bağımlılıklar:**
+
+Bu PR'ın bağımlı olduğu diğer işler veya PR'lar varsa belirtiniz.
+
+(Bağımlılıklar buraya)
 -->
 
 ## Participants
 <!-- 
-List individuals or teams involved in this PR:
-- Mention relevant stakeholders or contributors.
+**Katılımcılar:**
+
+Bu PR ile ilgili olan kişilerin listesini buraya ekleyiniz.
+
+(Katılımcılar buraya)
 -->
