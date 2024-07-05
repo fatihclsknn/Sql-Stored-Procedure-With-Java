@@ -1,39 +1,54 @@
-# Description
+## Motivation & Context
+<!-- 
+Describe why this PR is opened. If related to an issue, link it here using markdown format:
+Related to: #[issue_number]
+Provide details about what prompted this PR, such as the problem being addressed or the feature being implemented.
+-->
 
-Please include a summary of the changes and the related issue. Please also include relevant motivation and context. List any dependencies that are required for this change.
+## Types of Changes
+<!-- 
+Specify what types of changes are included in this PR by checking the relevant boxes:
+- [ ] Bugfix
+- [ ] Feature
+- [ ] Enhancement
+- [ ] Refactor
+- [ ] Documentation
+- [ ] Other: (specify)
+If this is a Breaking Change or includes significant changes, please mention so reviewers can prioritize accordingly.
+-->
 
-Fixes # (issue)
+## Description
+<!-- 
+Provide a detailed description of the changes made:
+- Explain how the solution was implemented.
+- Describe the modified parts of the code.
+- List any new functionality or behavior introduced.
+-->
 
-## Type of change
+## How has this been tested?
+<!-- 
+Describe how the changes were tested:
+- Outline the testing process and methodologies.
+- Provide specific test cases or scenarios used.
+- If not tested, explain why (e.g., non-functional changes).
+-->
 
-Please delete options that are not relevant.
+## Screenshots
+<!-- 
+Include screenshots if applicable:
+- Visual changes or output before/after (if UI-related).
+- Command-line outputs or database changes (if applicable).
+-->
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+## Dependencies
+<!-- 
+List any dependencies this PR relies on:
+- Prior PRs that need to be merged first.
+- Post-merge tasks or server-side configurations needed.
+-->
 
-# How Has This Been Tested?
-
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
-
-- [ ] Test A
-- [ ] Test B
-
-**Test Configuration**:
-* Firmware version:
-* Hardware:
-* Toolchain:
-* SDK:
-
-# Checklist:
-
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published in downstream modules
-
+## Participants
+<!-- 
+List individuals or teams involved in this PR:
+- Mention relevant stakeholders or contributors.
+-->
