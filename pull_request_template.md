@@ -1,75 +1,43 @@
-## Motivation & Context
-<!-- 
-**Motivasyon ve Bağlam:**
+## Summary
 
-Bu PR neden açıldı? Lütfen aşağıda detaylandırın.
+<!-- Provide a concise summary "Why are the changes needed"? 
+Include any relevant links, such as Jira tickets, Slack discussions, 
+or design documents. -->
 
-- [ ] Bu PR, bir issue ile ilişkilendirilmiştir. (#issue_numarası)
-- [ ] Bu PR, mevcut bir sorunu çözmektedir.
-- [ ] Bu PR, yeni bir özellik eklemektedir.
-- [ ] Diğer: (lütfen belirtiniz)
+## Changes Made
 
-Açıklama:
-(Yazınız buraya)
--->
+<!-- Describe the specific changes that have been made in this pull 
+request. Provide details on the approach taken to address the problem 
+and any notable implementation details. -->
 
-## Types of Changes
-<!-- 
-**Değişiklik Türleri:**
+## Checklist
 
-Bu PR'da hangi türde değişiklikler bulunmaktadır? Aşağıdan seçiniz veya uygun bir türü belirtiniz.
+- [ ] I have added comments to code in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] Any dependent changes have been merged and published in downstream modules
 
-- [ ] Bugfix (Hata düzeltmesi)
-- [ ] Feature (Yeni özellik)
-- [ ] Enhancement (Geliştirme)
-- [ ] Refactor (Kod iyileştirmesi)
-- [ ] Documentation (Dökümantasyon)
-- [ ] Other: (lütfen belirtiniz)
+<!-- Optional Sections -->
+<details>
+<summary><strong>Expand for optional sections</strong></summary>
 
-Bu PR, Breaking Change içermekte midir? (Evet/Hayır)
--->
+## Screenshots 
+<!-- If the changes are visual, including screenshots or GIFs can 
+help reviewers understand them more easily. -->
 
-## Description
-<!-- 
-**Açıklama:**
+## Related issues
+<!-- A link to any related issues or bugs that the pull request 
+addresses, connecting the code's context with the problem it 
+solves. -->
 
-Bu PR kapsamında yapılan değişiklikler hakkında detaylı bir açıklama yapınız. Nasıl çözüldü, ne yapıldı, hangi dosyalar değiştirildi?
+## Testing instructions
+<!-- Instructions on how to test the changes made in the pull 
+request, helping reviewers validate the code. -->
 
-(Açıklamanız buraya)
--->
+## Special notes for your reviewer
+<!-- If there are any specific instructions or considerations you 
+want to highlight for the reviewer, include them in this section. -->
 
-## How has this been tested?
-<!-- 
-**Nasıl test edildi?**
-
-Bu PR'ın yapılan değişiklikler doğrultusunda nasıl test edildiğini açıklayınız. Kullanılan test senaryolarını veya test edilen ortamı belirtiniz.
-
-(Test süreci ve sonuçları buraya)
--->
-
-## Screenshots
-<!-- 
-**Ekran Görüntüleri:**
-
-Varsa, bu PR ile ilgili ekran görüntüleri ekleyiniz. Görsel değişiklikleri göstermek önemlidir.
-
-(Ekran görüntüleri buraya)
--->
-
-## Dependencies
-<!-- 
-**Bağımlılıklar:**
-
-Bu PR'ın bağımlı olduğu diğer işler veya PR'lar varsa belirtiniz.
-
-(Bağımlılıklar buraya)
--->
-
-## Participants
-<!-- 
-**Katılımcılar:**
-
-Bu PR ile ilgili olan kişilerin listesini buraya ekleyiniz.
-
-(Katılımcılar buraya)
--->
+</details>
+<!-- End of Optional Sections -->
